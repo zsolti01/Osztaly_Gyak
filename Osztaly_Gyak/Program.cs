@@ -18,11 +18,22 @@ namespace Osztaly_Gyak
     }
     
     public Butorlap(string tipus, int hossz, int szelesseg)
-        {
-            this.tipus = tipus;
-            this.hossz = hossz;
-            this.szelesseg = szelesseg;
-        }
+    {
+        this.tipus = tipus;
+        this.hossz = hossz;
+        this.szelesseg = szelesseg;
+    }
+
+    public int ArSzamolalo()
+    {
+        double terulet = (hossz / 100.0) * (szelesseg / 100.0);
+        if (tipus == "tartólap")
+            return (int)(terulet * tartolap);
+        else if (tipus == "hátlap")
+            return (int)(terulet * hatlap);
+        else
+            return 0;
+    }
 
     internal class Program
     {
